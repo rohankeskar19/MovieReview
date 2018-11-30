@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Movie Review</string>
+    <string name="API_KEY">8098064858ea61ebc15f5dceabf6b02f</string>
+
 </resources>
