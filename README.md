@@ -1,8 +1,8 @@
 # MovieReview
-A movie review app created using tmdb movie api
+A movie review app created using tmdb movie api.
 
 Currently Home section is pending
-all ideas are welcome
+all ideas are welcome.
 
 # Steps
 1. Signup on TMDB's site https://www.themoviedb.org/
