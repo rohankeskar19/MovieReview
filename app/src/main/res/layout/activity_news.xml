@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+
+            <ImageView
+                android:id="@+id/thumbnailImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/gradient"
+                android:rotation="180"
+                />
+
+            <TextView
+                android:id="@+id/newsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Titans Recap : A memory down lane"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:scrollHorizontally="true"
+                />
+
+
+                <TextView
+                    android:id="@+id/descriptionTextView"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="All-Stars rules have been temporarily suspended,' RuPaul says in the first full-length trailer for the upcoming season of 'RuPaul's Drag Race All-Stars 4."
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:layout_below="@+id/thumbnailImage"
+                    android:background="@drawable/box_style"
+                    android:layout_marginTop="20dp"
+                    />
+
+
+            <TextView
+                android:id="@+id/contentTextView"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We’re still one week away from the RuPaul’s Drag Race All-Stars 4 premiere, but the upcoming season’s first trailer is already teasing a shocking twist that’s sure to send a sickening shiver down the spines of kitty girls everywhere. “ All-Stars rules have be… [+1511 chars]"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:layout_below="@+id/descriptionTextView"
+                android:background="@drawable/box_style"
+                android:layout_marginTop="20dp"
+                />
+
+            <TextView
+                android:id="@+id/linkToArticle"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Link to Article : https://ew.com/tv/2018/12/07/rupauls-drag-race-all-stars-4-trailer/"
+                android:autoLink="all"
+                android:textColorLink="@color/lightBlue"
+                android:textColor="@color/white"
+                android:layout_below="@+id/contentTextView"
+                android:background="@drawable/box_style"
+                android:layout_marginTop="20dp"
+                />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linkToArticle"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:background="@drawable/box_style"
+                >
+
+                <TextView
+                    android:id="@+id/publishedAt"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Published At : 2018-12-08T02:05:19Z"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:layout_below="@+id/descriptionTextView"
+                    android:layout_marginTop="5dp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/authorTextView"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:text="Author : Joey Nolfi"
+                    android:layout_marginBottom="5dp"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:background="@drawable/box_style"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:text="Source : Entertainment Weekly"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@id/linearLayout"
+                android:layout_marginTop="20dp"
+                />
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.rohan.moviereview"
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -36,4 +36,15 @@ dependencies {
     //RecyclerView
     implementation 'com.android.support:recyclerview-v7:28.0.0-alpha3'
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
+
+    //Facebook Shimmer Library
+    implementation 'com.facebook.shimmer:shimmer:0.3.0'
+
+
+    //Expandable RecyclerView
+    implementation 'com.github.ayalma:ExpandableRecyclerView:0.2.0'
+
+    //Cirlce Image View
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
 }

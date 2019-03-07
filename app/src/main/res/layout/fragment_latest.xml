@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".Fragments.LatestFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewLatestMovies"
+                android:layout_width="195dp"
+                android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+
+
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewLatestTV"
+                android:layout_width="195dp"
+                android:layout_height="match_parent"
+                >
+
+            </android.support.v7.widget.RecyclerView>
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

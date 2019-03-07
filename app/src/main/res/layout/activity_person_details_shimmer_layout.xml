@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/black"
+    >
+
+
+
+            <View
+                android:id="@+id/staggeredRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+
+                >
+
+
+            </View>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/gradient1"
+                android:layout_above="@+id/linearLayout"
+                android:layout_marginBottom="-11dp"
+                />
+
+            <View
+                android:id="@+id/personsNameTextView"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@+id/staggeredRecyclerView"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/lightGray"
+                />
+
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/colorPrimary"
+                android:layout_below="@+id/personsNameTextView"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                >
+
+                <View
+                    android:id="@+id/profileImageView"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/lightGray"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    >
+
+                    <View
+                        android:layout_width="250dp"
+                        android:layout_height="20dp"
+                        android:background="@color/lightGray"
+                        android:layout_marginTop="3dp"
+                        />
+
+                    <View
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:background="@color/lightGray"
+                        android:layout_marginTop="3dp"
+                        />
+
+                    <View
+                        android:layout_width="160dp"
+                        android:layout_height="20dp"
+                        android:background="@color/lightGray"
+                        android:layout_marginTop="3dp"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/birthDate"
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/personsNameTextView"
+                android:layout_marginTop="-5dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/lightGray"
+                />
+
+            <LinearLayout
+                android:id="@+id/filmographyLayout"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorPrimary"
+                android:orientation="vertical"
+                android:layout_below="@+id/linearLayout"
+                android:padding="5dp">
+
+
+
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/lightGray"
+                        android:layout_centerVertical="true"
+                        />
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    >
+                    <View
+                        android:layout_width="130dp"
+                        android:layout_height="230dp"
+                        android:background="@color/lightGray"
+                        android:layout_marginRight="5dp"
+                        />
+
+                    <View
+                        android:layout_width="130dp"
+                        android:layout_height="230dp"
+                        android:background="@color/lightGray"
+                        android:layout_marginRight="5dp"
+                        />
+
+
+                    <View
+                        android:layout_width="130dp"
+                        android:layout_height="230dp"
+                        android:background="@color/lightGray"
+                        android:layout_marginRight="5dp"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+</RelativeLayout>

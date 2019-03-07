@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/parentLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:padding="4dp"
+    >
+    
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="RohanKeskar"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lightGray"
+        android:layout_below="@id/author"
+        android:layout_marginTop="3dp"
+        />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Venom is a great comic adaptation. I really like what they did with the character and the story. I thought the film was done well. The special effects are pretty good. I thought the characters were cast well, and overall I just enjoyed it. The film is pretty dark and violent despite the PG-13 rating. It didn't have a lot of blood, but there was a bit here and there. Characters are mostly tossed around and beaten, but a lot of them are not shown dead. That being said, "
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/author"
+        />
+
+
+
+</RelativeLayout>

@@ -20,6 +20,14 @@
         </activity>
         <activity android:name=".SearchActivity"></activity>
         <activity android:name=".MovieDetailActivity"></activity>
+        <activity android:name=".MovieDescriptionActivity"></activity>
+        <activity android:name=".SeeAllActivity"></activity>
+        <activity android:name=".NewsActivity"></activity>
+        <activity android:name=".PersonDetailsActivity"></activity>
+        <activity android:name=".VideoActivity" android:screenOrientation="landscape"></activity>
+        <activity android:name=".TVDetailActivity"></activity>
+        <activity android:name=".TVDescriptionActivity"></activity>
+
     </application>
 
 </manifest>

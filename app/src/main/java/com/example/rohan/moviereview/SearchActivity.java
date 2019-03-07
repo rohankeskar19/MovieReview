@@ -22,6 +22,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.rohan.moviereview.Helpers.SearchResultsAdapter;
 import com.example.rohan.moviereview.Models.Movie;
+import com.example.rohan.moviereview.Models.People;
+import com.example.rohan.moviereview.Models.TV;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,10 +35,10 @@ public class SearchActivity extends AppCompatActivity {
 
     private static final String TAG = "SearchActivity";
 
-    private ArrayList<Movie> mMovies = new ArrayList<>();
+    private ArrayList<Object> searchResults = new ArrayList<>();
     RecyclerView recyclerView;
     EditText searchEditText;
-    String url = "https://api.themoviedb.org/3/search/movie?api_key=8098064858ea61ebc15f5dceabf6b02f&";
+    String url;
     RequestQueue myRequestQueue;
     TextView noResultTextView;
     @Override
@@ -44,7 +46,6 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         setTitle("Activity 1");
-
         noResultTextView = findViewById(R.id.noResultsTextView);
         recyclerView = findViewById(R.id.recyclerview);
         myRequestQueue = Volley.newRequestQueue(this);
@@ -77,7 +78,7 @@ public class SearchActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
 
 
-                String url = "https://api.themoviedb.org/3/search/movie?api_key=8098064858ea61ebc15f5dceabf6b02f&query=" + s;
+                String url = "https://api.themoviedb.org/3/search/multi?api_key="+ getString(R.string.API_KEY) + "&query="+ s;
 
                     Log.d(TAG, "afterTextChanged: " + url);
                     if(s.length() != 0) {
@@ -123,26 +124,76 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void processJSON(JSONArray results){
-        mMovies.clear();
+        searchResults.clear();
         try {
             for (int i = 0; i < results.length(); i++) {
 
-                JSONObject movie = results.getJSONObject(i);
-                Double voteCount = movie.getDouble("vote_count");
-                int id = movie.getInt("id");
-                Double voteAverage = movie.getDouble("vote_average");
-                String title = movie.getString("title");
-                int popularity = movie.getInt("popularity");
-                String posterPath = movie.getString("poster_path");
-                String language = movie.getString("original_language");
-                String overview = movie.getString("overview");
-                String releaseDate = movie.getString("release_date");
-                String backdropPath = movie.getString("backdrop_path");
-                boolean adult = movie.getBoolean("adult");
+                JSONObject searchObject = results.getJSONObject(i);
+
+                if (searchObject.getString("media_type").equals("movie")){
+                    Double voteCount = searchObject.getDouble("vote_count");
+                    int id = searchObject.getInt("id");
+                    Double voteAverage = searchObject.getDouble("vote_average");
+                    String title = searchObject.getString("title");
+                    int popularity = searchObject.getInt("popularity");
+                    String posterPath = searchObject.getString("poster_path");
+                    String language = searchObject.getString("original_language");
+                    String overview = searchObject.getString("overview");
+                    String releaseDate = searchObject.getString("release_date");
+                    String backdropPath = searchObject.getString("backdrop_path");
+                    boolean adult = searchObject.getBoolean("adult");
 
 
-                Movie movieObject = new Movie(title, releaseDate, overview, adult, posterPath, language, id, voteCount, voteAverage, popularity, backdropPath);
-                mMovies.add(movieObject);
+                    Movie movieObject = new Movie(title, releaseDate, overview, adult, posterPath, language, id, voteCount, voteAverage, popularity, backdropPath);
+                    searchResults.add(movieObject);
+                }
+                else if(searchObject.getString("media_type").equals("tv")){
+                    String name = searchObject.getString("original_name");
+                    int id = searchObject.getInt("id");
+                    Double voteCount = searchObject.getDouble("vote_count");
+                    Double voteAverage = searchObject.getDouble("vote_average");
+                    String posterPath = searchObject.getString("poster_path");
+                    String airDate = searchObject.getString("first_air_date");
+                    String originalLanguage = searchObject.getString("original_language");
+                    String backdropPath = searchObject.getString("backdrop_path");
+                    String overview = searchObject.getString("overview");
+                    Double popularity = searchObject.getDouble("popularity");
+
+
+                    TV tv = new TV(name,id,posterPath,airDate,originalLanguage,backdropPath,overview,voteCount,voteAverage,popularity);
+                    searchResults.add(tv);
+
+                }
+                else if(searchObject.getString("media_type").equals("person")){
+                    int id = searchObject.getInt("id");
+                    String profilePath = searchObject.getString("profile_path");
+                    String name = searchObject.getString("name");
+                    Double popularity = searchObject.getDouble("popularity");
+
+                    ArrayList<String> knownFor = new ArrayList<>();
+
+                    JSONArray jsonArray = searchObject.getJSONArray("known_for");
+
+                    for (int j = 0; j < jsonArray.length(); j++){
+                        JSONObject jsonObject = jsonArray.getJSONObject(j);
+                        if (jsonObject.getString("media_type").equals("tv")){
+                            Log.d(TAG, "processJSON: inside tv");
+                            knownFor.add(jsonObject.getString("original_name"));
+                        }
+                        else if (jsonObject.getString("media_type").equals("movie")){
+                            Log.d(TAG, "processJSON: inside movie");
+                            knownFor.add(jsonObject.getString("original_title"));
+                        
+                        }
+
+
+                    }
+                    People people = new People(name,profilePath,id,popularity,knownFor);
+                    searchResults.add(people);
+                }
+
+
+
 
 
             }
@@ -155,7 +206,7 @@ public class SearchActivity extends AppCompatActivity {
 
     private void setupRecyclerView(){
 
-        SearchResultsAdapter searchResultsAdapter = new SearchResultsAdapter(mMovies,this);
+        SearchResultsAdapter searchResultsAdapter = new SearchResultsAdapter(searchResults,this);
         recyclerView.setAdapter(searchResultsAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

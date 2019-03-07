@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:id="@+id/parentLayout"
+    android:background="@color/black"
+    android:padding="2dp"
+    android:clickable="true"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+        <ImageView
+            android:id="@+id/posterImageView"
+            android:layout_width="100dp"
+            android:layout_height="130dp"
+            android:layout_marginRight="5dp"
+            android:transitionName="image_transition"
+
+            />
+
+        <TextView
+            android:id="@+id/movieTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Captain Marvel is the best women in the work"
+            android:layout_toRightOf="@+id/posterImageView"
+
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginTop="3dp"
+            />
+
+        <TextView
+            android:id="@+id/overviewTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/posterImageView"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:layout_marginRight="5dp"
+
+            android:text="The story follows Carol Danvers as she becomes one of the universe’s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races."
+            android:layout_centerVertical="true"
+            android:textColor="#fff"
+            android:textSize="12sp"
+
+            />
+
+        <TextView
+            android:id="@+id/releasedateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/posterImageView"
+
+            android:text="2019"
+            android:textColor="#fff"
+            android:layout_above="@+id/view"
+            android:layout_marginBottom="10dp"
+            />
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="@color/lightGray"
+            android:layout_alignParentBottom="true"
+            />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

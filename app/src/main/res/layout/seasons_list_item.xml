@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/parentLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@color/black"
+    android:padding="2dp"
+    >
+
+    <ImageView
+        android:id="@+id/posterImageView"
+        android:layout_width="110dp"
+        android:layout_height="150dp" />
+
+    <TextView
+        android:id="@+id/seasonNumberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Season 1"
+        android:textColor="@color/white"
+        android:layout_toRightOf="@+id/posterImageView"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="3dp"
+        />
+
+    <TextView
+        android:id="@+id/episodeCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No of Episodes : 6"
+        android:textColor="@color/white"
+        android:layout_toRightOf="@+id/posterImageView"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@id/seasonNumberTextView"
+        android:layout_marginTop="5dp"
+        android:textSize="13sp"
+        />
+
+
+    <TextView
+        android:id="@+id/airDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2014-02-27"
+        android:textColor="@color/white"
+        android:layout_toRightOf="@+id/posterImageView"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@id/episodeCountTextView"
+        android:layout_marginTop="5dp"
+        android:textSize="11sp"
+        />
+
+    <TextView
+        android:id="@+id/seasonOverviewTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Season two brings crises of faith, of power, of relationships. Brothers rise up against one another. Loyalties shift from friend to foe, and unlikely alliances are formed in the name of supremacy. Ragnar’s indiscretions threaten his marriage to Lagertha, tearing him and his beloved son apart. Plots are hatched, scores are settled, blood is spilled…all under the watchful eyes of the gods."
+        android:textColor="@color/white"
+        android:layout_toRightOf="@+id/posterImageView"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@id/airDateTextView"
+        android:layout_marginTop="5dp"
+        android:textSize="9sp"
+        />
+
+
+</RelativeLayout>
