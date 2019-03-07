@@ -2,7 +2,7 @@
 A movie review app created using tmdb movie api
 
 Currently Home section is pending
-All ideas are welcome
+all ideas are welcome
 
 # Steps
 1. Signup on TMDB's site https://www.themoviedb.org/
